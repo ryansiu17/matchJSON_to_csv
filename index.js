@@ -1,8 +1,11 @@
 const fs = require("fs");
+require("dotenv").config();
+
+const directory = process.env.JSON_DIRECTORY;
 const matchesCSVHeader =
   "gameId,platformId,gameCreation,gameDuration,queueId,mapId,seasonId,gameVersion,gameMode,gameType,team0-teamId,team0-win,team0-firstBlood,team0-firstTower,team0-firstInhibitor,team0-firstBaron,team0-firstDragon,team0-firstRiftHerald,team0-towerKills,team0-inhibitorKills,team0-baronKills,team0-dragonKills,team0-vilemawKills,team0-riftHeraldKills,team0-dominionVictoryScore,team0-ban-0-championId,team0-ban-1-championId,team0-ban-2-championId,team0-ban-3-championId,team0-ban-4-championId,team1-teamId,team1-win,team1-firstBlood,team1-firstTower,team1-firstInhibitor,team1-firstBaron,team1-firstDragon,team1-firstRiftHerald,team1-towerKills,team1-inhibitorKills,team1-baronKills,team1-dragonKills,team1-vilemawKills,team1-riftHeraldKills,team1-dominionVictoryScore,team1-ban-0-championId,team1-ban-1-championId,team1-ban-2-championId,team1-ban-3-championId,team1-ban-4-championId";
 const playersCSVHeader =
-  "platformId,accountId,summonerName,summonerId,currentPlatformId,currentAccountId,matchHistoryUri,profileIcon,participantId,teamId,championId,spell1Id,spell2Id,win,item0,item1,item2,item3,item4,item5,item6,kills,deaths,assists,largestKillingSpree,largestMultiKill,killingSprees,longestTimeSpentLiving,doubleKills,tripleKills,quadraKills,pentaKills,unrealKills,totalDamageDealt,magicDamageDealt,physicalDamageDealt,trueDamageDealt,largestCriticalStrike,totalDamageDealtToChampions,magicDamageDealtToChampions,physicalDamageDealtToChampions,trueDamageDealtToChampions,totalHeal,totalUnitsHealed,damageSelfMitigated,damageDealtToObjectives,damageDealtToTurrets,visionScore,timeCCingOthers,totalDamageTaken,magicalDamageTaken,physicalDamageTaken,trueDamageTaken,goldEarned,goldSpent,turretKills,inhibitorKills,totalMinionsKilled,neutralMinionsKilled,neutralMinionsKilledTeamJungle,neutralMinionsKilledEnemyJungle,totalTimeCrowdControlDealt,champLevel,visionWardsBoughtInGame,sightWardsBoughtInGame,wardsPlaced,wardsKilled,firstBloodKill,firstBloodAssist,firstTowerKill,firstTowerAssist,firstInhibitorKill,firstInhibitorAssist,combatPlayerScore,objectivePlayerScore,totalPlayerScore,totalScoreRank,playerScore0,playerScore1,playerScore2,playerScore3,playerScore4,playerScore5,playerScore6,playerScore7,playerScore8,playerScore9,perk0,perk0Var1,perk0Var2,perk0Var3,perk1,perk1Var1,perk1Var2,perk1Var3,perk2,perk2Var1,perk2Var2,perk2Var3,perk3,perk3Var1,perk3Var2,perk3Var3,perk4,perk4Var1,perk4Var2,perk4Var3,perk5,perk5Var1,perk5Var2,perk5Var3,perkPrimaryStyle,perkSubStyle,statPerk0,statPerk1,statPerk2,creepsPerMinDeltas-0-10,creepsPerMinDeltas-10-20,xpPerMinDeltas-0-10,xpPerMinDeltas-10-20,goldPerMinDeltas-0-10,goldPerMinDeltas-10-20,csDiffPerMinDeltas-0-10,csDiffPerMinDeltas-10-20,xpDiffPerMinDeltas-0-10,xpDiffPerMinDeltas-10-20,damageTakenPerMinDeltas-0-10,damageTakenPerMinDeltas-10-20,damageTakenDiffPerMinDeltas-0-10,damageTakenDiffPerMinDeltas-10-20,role,lane,gameId";
+  "platformId,accountId,summonerName,summonerId,currentPlatformId,currentAccountId,matchHistoryUri,profileIcon,participantId,teamId,championId,spell1Id,spell2Id,win,item0,item1,item2,item3,item4,item5,item6,kills,deaths,assists,largestKillingSpree,largestMultiKill,killingSprees,longestTimeSpentLiving,doubleKills,tripleKills,quadraKills,pentaKills,unrealKills,totalDamageDealt,magicDamageDealt,physicalDamageDealt,trueDamageDealt,largestCriticalStrike,totalDamageDealtToChampions,magicDamageDealtToChampions,physicalDamageDealtToChampions,trueDamageDealtToChampions,totalHeal,totalUnitsHealed,damageSelfMitigated,damageDealtToObjectives,damageDealtToTurrets,visionScore,timeCCingOthers,totalDamageTaken,magicalDamageTaken,physicalDamageTaken,trueDamageTaken,goldEarned,goldSpent,turretKills,inhibitorKills,totalMinionsKilled,neutralMinionsKilled,neutralMinionsKilledTeamJungle,neutralMinionsKilledEnemyJungle,totalTimeCrowdControlDealt,champLevel,visionWardsBoughtInGame,sightWardsBoughtInGame,wardsPlaced,wardsKilled,combatPlayerScore,objectivePlayerScore,totalPlayerScore,totalScoreRank,playerScore0,playerScore1,playerScore2,playerScore3,playerScore4,playerScore5,playerScore6,playerScore7,playerScore8,playerScore9,perk0,perk0Var1,perk0Var2,perk0Var3,perk1,perk1Var1,perk1Var2,perk1Var3,perk2,perk2Var1,perk2Var2,perk2Var3,perk3,perk3Var1,perk3Var2,perk3Var3,perk4,perk4Var1,perk4Var2,perk4Var3,perk5,perk5Var1,perk5Var2,perk5Var3,perkPrimaryStyle,perkSubStyle,statPerk0,statPerk1,statPerk2,firstBloodKill,firstBloodAssist,firstTowerKill,firstTowerAssist,firstInhibitorKill,firstInhibitorAssist,creepsPerMinDeltas-0-10,creepsPerMinDeltas-10-20,xpPerMinDeltas-0-10,xpPerMinDeltas-10-20,goldPerMinDeltas-0-10,goldPerMinDeltas-10-20,csDiffPerMinDeltas-0-10,csDiffPerMinDeltas-10-20,xpDiffPerMinDeltas-0-10,xpDiffPerMinDeltas-10-20,damageTakenPerMinDeltas-0-10,damageTakenPerMinDeltas-10-20,damageTakenDiffPerMinDeltas-0-10,damageTakenDiffPerMinDeltas-10-20,role,lane,championName,championRole,gameId";
 const timelineValues = [
   "creepsPerMinDeltas",
   "xpPerMinDeltas",
@@ -20,6 +23,9 @@ const special = [
   "firstInhibitorKill",
   "firstInhibitorAssist"
 ];
+
+const championNames = JSON.parse(fs.readFileSync("flatChampionNames.json"));
+const championRoles = JSON.parse(fs.readFileSync("flatChampionRoles.json"));
 
 const getFilePathsFromDir = (dir, cb) => {
   let filepaths = [];
@@ -119,12 +125,13 @@ const flattenJSON = match => {
         }
         player.role = playerData.timeline["role"];
         player.lane = playerData.timeline["lane"];
+        player.championName = championNames[player.championId];
+        player.championRole = championRoles[player.championId];
       }
     }
     player.gameId = match.gameId;
     writePlayerCSV(player);
   }
-
   writeMatchCSV(match);
 };
 
@@ -133,14 +140,6 @@ const getMatchesHeader = match => {
   delete match["participants"];
   delete match["participantIdentities"];
   fs.appendFile("matches.csv", Object.keys(match).join(",") + "\n", err => {
-    if (err !== null) {
-      console.log("Error" + err);
-    }
-  });
-};
-
-const getPlayersHeader = player => {
-  fs.appendFile("players.csv", Object.keys(player).join(",") + "\n", err => {
     if (err !== null) {
       console.log("Error" + err);
     }
@@ -167,7 +166,8 @@ const writePlayerCSV = player => {
 };
 
 const main = () => {
-  getFilePathsFromDir("json", async paths => {
+  console.log(directory);
+  getFilePathsFromDir(directory, async paths => {
     for (let path of paths) {
       await readJSONFromPath(path);
       console.log(path);

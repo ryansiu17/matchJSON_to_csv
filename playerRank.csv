@@ -1,0 +1,13 @@
+leagueId,queueType,tier,rank,summonerId,summonerName,leaguePoints,wins,losses,veteran,inactive,freshBlood,hotStreak,miniSeries-target,miniSeries-wins,miniSeries-losses,miniSeries-progress
+1553d590-249a-11e9-b502-c81f66cf2333,RANKED_SOLO_5x5,DIAMOND,I,iuVdYDh24XfA5dhRNYDTQrAQohkIk38aqzyGTj1CTA1PoaA,Terde,0,215,204,true,false,false,false,NA,NA,NA,NA
+70dfa4b0-afbf-11e9-8754-c81f66dbb56c,RANKED_TFT,DIAMOND,III,iuVdYDh24XfA5dhRNYDTQrAQohkIk38aqzyGTj1CTA1PoaA,Terde,0,47,179,false,false,false,false,NA,NA,NA,NA
+837a5470-2357-11e9-9efe-c81f66dbb56c,RANKED_FLEX_SR,PLATINUM,II,KjnNqtKDU9ayDCxpeOb0b8W1Dd2tdl1UT41xZsoaQ1izFW8,Sahsook,45,34,16,false,false,false,false,NA,NA,NA,NA
+e310c280-2518-11e9-8022-c81f66cf2333,RANKED_SOLO_5x5,DIAMOND,I,KjnNqtKDU9ayDCxpeOb0b8W1Dd2tdl1UT41xZsoaQ1izFW8,Sahsook,100,366,344,true,false,false,false,3,1,2,LWLNN
+00d07caf-539b-346a-a4f8-fdb57ab31aa4,RANKED_SOLO_5x5,GRANDMASTER,I,ZK9bbgz2Z8Va7c3KtmfdOadO82VyKydYlPkXrXn0W3v2EUg,Junha,221,353,308,false,false,false,true,NA,NA,NA,NA
+214529e0-3dd5-11e9-a90e-c81f66cf135e,RANKED_FLEX_SR,PLATINUM,I,zPafhF9OZcG6ohBH7du12ap6xKnDiPwCCPeJwk4tHnF8jyw,V O,52,23,23,false,false,false,false,NA,NA,NA,NA
+c7d052a0-2d6b-11e9-b6d8-c81f66cf2333,RANKED_SOLO_5x5,DIAMOND,I,zPafhF9OZcG6ohBH7du12ap6xKnDiPwCCPeJwk4tHnF8jyw,V O,0,270,246,true,false,false,false,NA,NA,NA,NA
+78c2c850-a980-11e9-9e48-c81f66cf135e,RANKED_TFT,SILVER,IV,zPafhF9OZcG6ohBH7du12ap6xKnDiPwCCPeJwk4tHnF8jyw,V O,0,2,31,false,false,false,false,NA,NA,NA,NA
+546d4df0-272a-11e9-ae1b-c81f66cf135e,RANKED_SOLO_5x5,DIAMOND,III,_e-onoau7L5DqlsW6ThlQq9SPLrvHAY2LxIPy2YW6RQA7dg,Keeeevon,60,172,141,true,false,false,false,NA,NA,NA,NA
+98818f80-6544-11e9-a82b-c81f66cf2333,RANKED_FLEX_SR,PLATINUM,I,Pg5WcnGIEnvPC3uNer1jQNp-fqYT-PNL73syYC9oTJbQaB4,CyanInkstone,0,16,19,false,false,false,false,NA,NA,NA,NA
+4173aaf0-bd7a-11e9-98a8-c81f66dbb56c,RANKED_TFT,GOLD,III,Pg5WcnGIEnvPC3uNer1jQNp-fqYT-PNL73syYC9oTJbQaB4,CyanInkstone,0,11,67,false,false,false,false,NA,NA,NA,NA
+f017ca70-3b0f-11e9-bb35-c81f66dbb56c,RANKED_SOLO_5x5,DIAMOND,I,Pg5WcnGIEnvPC3uNer1jQNp-fqYT-PNL73syYC9oTJbQaB4,CyanInkstone,0,704,690,true,false,false,false,NA,NA,NA,NA
