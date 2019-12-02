@@ -130,6 +130,7 @@ const flattenJSON = match => {
       }
     }
     player.gameId = match.gameId;
+    player.gameDuration = match.gameDuration;
     writePlayerCSV(player);
   }
   writeMatchCSV(match);
